@@ -18,16 +18,15 @@ import com.ru.gridrecyclerview.view.fragment.PhotoFullScreen
 
 class GridAdapter(
     val transactionInterface: TransactionInterface,
-    val context: Context,
     val list: List<GridData>
 ) : RecyclerView.Adapter<GridAdapter.GridViewHolder>() {
-    inner class GridViewHolder(view : View, var transactionInterface: TransactionInterface) : RecyclerView.ViewHolder(view) {
+    inner class GridViewHolder(var view : View, var transactionInterface: TransactionInterface) : RecyclerView.ViewHolder(view) {
         var photo = view.findViewById<ImageView>(R.id.rv_photo)
 
 
         fun setPhoto(photoUrl : String){
             //Set photo from Newtwork
-            Glide.with(context)
+            Glide.with(view.context)
                 .load(photoUrl)
                 .into(photo)
 

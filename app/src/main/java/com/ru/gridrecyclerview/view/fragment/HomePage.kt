@@ -40,7 +40,7 @@ class HomePage : Fragment(),TransactionInterface {
 
 
         var list = viewModel.dataResult.value!!
-        recyclerView.adapter = GridAdapter(this,requireContext(),list)
+        recyclerView.adapter = GridAdapter(this,list)
     }
 
     override fun transaction(url: String) {

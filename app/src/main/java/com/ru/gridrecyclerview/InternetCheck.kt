@@ -11,8 +11,10 @@ import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
+import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.findViewTreeLifecycleOwner
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.ru.gridrecyclerview.R
 import com.ru.gridrecyclerview.ViewModel.ApiViewModel
@@ -44,6 +46,11 @@ class InternetCheck : Fragment() {
         val progressBar = binding.progressBar
         val success = binding.successCheck
         val unsuccess = binding.unsuccessCheck
+        val tryAgain = binding.tryAgain
+
+        tryAgain.setOnClickListener {
+            findNavController().navigate(R.id.internetCheck)
+        }
 
         if (viewModel.status.value == true) {
             Log.d("MyError", "${viewModel.status.value} from viewModel")
