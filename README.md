@@ -1,9 +1,7 @@
 # GridRecyclerView
-Чтобы начинать работу программы, сначала переверните телефон, а потом можете сдеалть
-обратно когда удобно после успешного загрузки :) 
+Чтобы начинать работу программы, сначала каждый раз надо будет нажать на Try Again :) 
 -------------------------------------------------------------------------------------
-To start an app first turn your phone configure to portrait and turn back again inside
-after successfully initialising. 
+To start an app first always u shoulld click Try Again
 ViewModel problems ^)
 -------------------------------------------------------------------------------------
 Proskills : Retrofit,RecyclerView,Glide,ViewModel,Communicating Adapter and Fragment
