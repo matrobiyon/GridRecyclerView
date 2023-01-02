@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/internetCheck">
+
+    <fragment
+        android:id="@+id/homePage"
+        android:name="com.ru.gridrecyclerview.view.fragment.HomePage"
+        android:label="fragment_home_page"
+        tools:layout="@layout/fragment_home_page" >
+        <action
+            android:id="@+id/action_homePage_to_photoFullScreen"
+            app:destination="@id/photoFullScreen"
+            app:popUpToInclusive="false" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/photoFullScreen"
+        android:name="com.ru.gridrecyclerview.view.fragment.PhotoFullScreen"
+        android:label="fragment_photo_full_screen"
+        tools:layout="@layout/fragment_photo_full_screen" >
+        <action
+            android:id="@+id/action_photoFullScreen_to_homePage"
+            app:destination="@id/homePage"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/internetCheck"
+        android:name="com.ru.gridrecyclerview.InternetCheck"
+        android:label="fragment_internet_check"
+        tools:layout="@layout/fragment_internet_check" >
+        <action
+            android:id="@+id/action_internetCheck_to_homePage"
+            app:destination="@id/homePage"
+            app:popUpTo="@id/internetCheck"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
