@@ -24,7 +24,7 @@ class ApiViewModel : ViewModel() {
     val status : LiveData<Boolean>
         get() = _status
 
-    init {
+    fun init() {
         viewModelScope.launch {
             try {
                 val listResult = PhotoApi.retrofitService.getData()

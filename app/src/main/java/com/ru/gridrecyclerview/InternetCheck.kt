@@ -13,6 +13,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import androidx.lifecycle.findViewTreeLifecycleOwner
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -42,6 +43,8 @@ class InternetCheck : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentInternetCheckBinding.inflate(inflater,container,false)
 
+        viewModel.init()
+
         val text = binding.waitingNetwork
         val progressBar = binding.progressBar
         val success = binding.successCheck
@@ -52,21 +55,25 @@ class InternetCheck : Fragment() {
             findNavController().navigate(R.id.internetCheck)
         }
 
-        if (viewModel.status.value == true) {
-            Log.d("MyError", "${viewModel.status.value} from viewModel")
 
-            progressBar.visibility = View.GONE
-            success.visibility = View.VISIBLE
+        val statusObserver = Observer<Boolean> {
+            if (viewModel.status.value == true) {
 
-            //Navigate to another fragment
-            Handler().postDelayed({
+                progressBar.visibility = View.GONE
+                success.visibility = View.VISIBLE
+
+                //Navigate to another fragment
+                Handler().postDelayed({
                     findNavController().navigate(R.id.action_internetCheck_to_homePage)
-                    },1500)
-        }else {
-            Log.d("MyError", "${viewModel.status.value} from InternetCheck")
-            progressBar.visibility = View.GONE
-            unsuccess.visibility = View.VISIBLE
+                }, 1500)
+            } else {
+                Log.d("MyError", "${viewModel.status.value} from InternetCheck")
+                progressBar.visibility = View.GONE
+                unsuccess.visibility = View.VISIBLE
+            }
         }
+        Handler().postDelayed({viewModel.status.observe(viewLifecycleOwner,statusObserver)},2000)
+
         return binding.root
     }
 
