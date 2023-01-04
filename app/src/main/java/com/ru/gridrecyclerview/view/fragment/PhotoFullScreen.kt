@@ -31,7 +31,7 @@ class PhotoFullScreen : Fragment() {
         Glide.with(requireContext())
             .load(viewModel.photoUrl)
             .into(photo)
-            
+
 
         return view
     }

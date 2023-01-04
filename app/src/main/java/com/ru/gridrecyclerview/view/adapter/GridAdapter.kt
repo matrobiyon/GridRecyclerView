@@ -1,20 +1,14 @@
 package com.ru.gridrecyclerview.view.adapter
 
-import android.content.Context
-import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import androidx.navigation.NavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.ru.gridrecyclerview.R
-import com.ru.gridrecyclerview.TransactionInterface
+import com.ru.gridrecyclerview.model.interfaces.TransactionInterface
 import com.ru.gridrecyclerview.model.data.GridData
-import com.ru.gridrecyclerview.view.fragment.HomePage
-import com.ru.gridrecyclerview.view.fragment.PhotoFullScreen
 
 class GridAdapter(
     val transactionInterface: TransactionInterface,

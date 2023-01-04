@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/internetCheck"
-        android:name="com.ru.gridrecyclerview.InternetCheck"
+        android:name="com.ru.gridrecyclerview.view.fragment.InternetCheck"
         android:label="fragment_internet_check"
         tools:layout="@layout/fragment_internet_check" >
         <action

@@ -1,4 +1,4 @@
-package com.ru.gridrecyclerview
+package com.ru.gridrecyclerview.view.fragment
 
 import android.os.Bundle
 import android.os.Handler
@@ -7,24 +7,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.ProgressBar
-import android.widget.TextView
-import android.widget.Toast
-import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.findViewTreeLifecycleOwner
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.ru.gridrecyclerview.R
 import com.ru.gridrecyclerview.ViewModel.ApiViewModel
 import com.ru.gridrecyclerview.databinding.FragmentInternetCheckBinding
-import com.ru.gridrecyclerview.model.data.GridData
-import com.ru.gridrecyclerview.model.loadData.PhotoApiService
-
-import retrofit2.*
-
 
 
 class InternetCheck : Fragment() {

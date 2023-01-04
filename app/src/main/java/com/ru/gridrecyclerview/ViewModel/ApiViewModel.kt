@@ -6,11 +6,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.ru.gridrecyclerview.model.data.GridData
-import com.ru.gridrecyclerview.model.loadData.PhotoApi
+import com.ru.gridrecyclerview.Api.PhotoApi
 import kotlinx.coroutines.launch
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class ApiViewModel : ViewModel() {
 

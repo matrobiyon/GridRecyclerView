@@ -6,17 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.setFragmentResult
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import com.ru.gridrecyclerview.R
-import com.ru.gridrecyclerview.TransactionInterface
+import com.ru.gridrecyclerview.model.interfaces.TransactionInterface
 import com.ru.gridrecyclerview.ViewModel.ApiViewModel
 import com.ru.gridrecyclerview.view.adapter.GridAdapter
 
-class HomePage : Fragment(),TransactionInterface {
+class HomePage : Fragment(), TransactionInterface {
     //Second fragment for showing the full screen photo
     private var photoFullScreen = PhotoFullScreen()
 
